@@ -8,8 +8,12 @@ export const postHistoria= async(req:Request, res:Response)=>{
    
 }
 
-export const putHistoria=(req:Request, res:Response)=>{
- return res.json('Hola mundo'); 
+export const putHistoria=async(req:Request, res:Response)=>{
+  const {id}= req.params
+  const {titulo, descripcion, imgPath, username}=req.body
+  const conn= await connect()
+  const query= await conn.query(`UPDATE historia set titulo="${titulo}", descripcion="${descripcion}", imgPath="${imgPath}", username="SorayaSanchez" WHERE id=${id}`)
+  return res.json(req.body); 
 }
 
 export const getHistorias= async(req:Request, res:Response)=>{

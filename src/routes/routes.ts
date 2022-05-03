@@ -4,5 +4,5 @@ import  {deleteHistoria, getHistoria, getHistorias, postHistoria, putHistoria} f
 export const router= Router()
 
 router.route('/api/historia').post(postHistoria);
-router.route('/api/historia/:id').get(getHistoria).put(putHistoria).delete(deleteHistoria);
 router.route('/api/historia/listar').get(getHistorias);
+router.route('/api/historia/:id').get(getHistoria).put(putHistoria).delete(deleteHistoria);
